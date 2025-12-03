@@ -8,16 +8,64 @@ import StatCard from './components/StatCard';
 
 const App = () => {
   // Mock data for the books pointing to local /files/ directory
-  // Ensure you have these actual .pdf files in your public/files/ folder
+  // Note: I have generated image paths based on the filenames. 
+  // Please ensure corresponding .png or .jpg files exist in public/books/images/
   const library = [
-    { title: "Sabh to vadda Satguru Nanak Megh Ji nu ", price: 'free', status: "new", file: "/books/files/sabh_to_vadda_satguru_nanak_megh_ji_nu.pdf", image: "/books/images/sabh_to_vadda_satguru.png" },
-    { title: "Tatti tavi utte baitha roop kartar da", price: 'free', status: "new", file: "/books/files/tatti_tavi_utte_baitha_roop_kartar_da.pdf", image: "/books/images/tatti_tavi_utte.png" },
-    { title: "Vaisakhi", price: 'free', status: "new", file: "/books/files/visakhi_punjabi_duniya_magazine.pdf", image: "/books/images/vaisakhi.png" },
-    { title: "Maa Baap", price: 'free', status: "new", file: "/books/files/maa_baap.pdf", image: "/books/images/maa_baap.png" },
+    // --- Manual/Existing Entries ---
+    {
+      title: "Sabh to vadda Satguru Nanak Megh Ji nu",
+      price: 'free',
+      status: "new",
+      file: "/books/files/sabh_to_vadda_satguru_nanak_megh_ji_nu.pdf",
+      image: "/books/images/sabh_to_vadda_satguru.png"
+    },
+    {
+      title: "Tatti tavi utte baitha roop kartar da",
+      price: 'free',
+      status: "new",
+      file: "/books/files/tatti_tavi_utte_baitha_roop_kartar_da.pdf",
+      image: "/books/images/tatti_tavi_utte.png"
+    },
+    {
+      title: "Vaisakhi",
+      price: 'free',
+      status: "new",
+      file: "/books/files/visakhi_punjabi_duniya_magazine.pdf",
+      image: "/books/images/vaisakhi.png"
+    },
+    {
+      title: "Maa Baap",
+      price: 'free',
+      status: "new",
+      file: "/books/files/maa_baap.pdf",
+      image: "/books/images/maa_baap.png"
+    },
+
+    // --- New Additions (From your list) ---
+    { title: "Eh Janam Tumare Lekhe", price: 'free', status: "popular", file: "/books/files/Eh_Janam_Tumare_Lekhe.pdf", image: "/books/images/Eh_Janam_Tumare_Lekhe.png" },
+    { title: "Guru Nanak Gurdwara Amesterdam", price: 'free', status: "popular", file: "/books/files/guru_nanak_Gurdwara_Amesterdam.pdf", image: "/books/images/guru_nanak_Gurdwara_Amesterdam.png" },
+    { title: "Guru Teg Bhadar Sahib", price: 'free', status: "popular", file: "/books/files/Guru_Teg_Bhadar_Sahib.pdf", image: "/books/images/Guru_Teg_Bhadar_Sahib.png" },
+    { title: "Kisan Khudkhushiyan Kive Rukan", price: 'free', status: "popular", file: "/books/files/kisan_khudkhushiyan_kive_rukan.pdf", image: "/books/images/kisan_khudkhushiyan_kive_rukan.png" },
+    { title: "Mitar Piyare Nu", price: 'free', status: "popular", file: "/books/files/Mitar_Piyare_Nu.pdf", image: "/books/images/Mitar_Piyare_Nu.png" },
+    { title: "Nasha Mukt Punjab", price: 'free', status: "popular", file: "/books/files/Nasha_Mukt_Punjab.pdf", image: "/books/images/Nasha_Mukt_Punjab.png" },
+    { title: "Pawan Guru Pani Pita", price: 'free', status: "popular", file: "/books/files/Pawan_Guru_Pani_Pita.pdf", image: "/books/images/Pawan_Guru_Pani_Pita.png" },
+    { title: "Qaum Tarakki Kiven Kare", price: 'free', status: "popular", file: "/books/files/Qaum_Tarakki_Kiven_Kare.pdf", image: "/books/images/Qaum_Tarakki_Kiven_Kare.png" },
+    { title: "Rangla Punjab", price: 'free', status: "popular", file: "/books/files/Rangla_Punjab.pdf", image: "/books/images/Rangla_Punjab.png" },
+    { title: "Satguru Nanak Pargatia", price: 'free', status: "popular", file: "/books/files/Satguru_Nanak_Pargatia.pdf", image: "/books/images/Satguru_Nanak_Pargatia.png" },
+    { title: "Vaho Vaho Godind Singh", price: 'free', status: "popular", file: "/books/files/Vaho_Vaho_Godind_Singh.pdf", image: "/books/images/Vaho_Vaho_Godind_Singh.png" },
+    { title: "Videya Di Chardi Kala Kiven Hove", price: 'free', status: "popular", file: "/books/files/Videya_Di_Chardi_Kala_Kiven_hove.pdf", image: "/books/images/Videya_Di_Chardi_Kala_Kiven_hove.png" },
+    { title: "Aesi Lal Tudh Bin Kaun Kare", price: 'free', status: "popular", file: "/books/files/Aesi_Lal_Tudh_Bin_kaun_kare.pdf", image: "/books/images/Aesi_Lal_Tudh_Bin_kaun_kare.png" },
+    { title: "Anmol Punjabi Khazana", price: 'free', status: "popular", file: "/books/files/anmol_punjabi_khazana.pdf", image: "/books/images/anmol_punjabi_khazana.png" },
+    { title: "Bhai Laal Chand Di Dhaal", price: 'free', status: "popular", file: "/books/files/bhai_laal_chand_di_dhaal.pdf", image: "/books/images/bhai_laal_chand_di_dhaal.png" },
+    { title: "Guru Har Krishan Ji", price: 'free', status: "popular", file: "/books/files/Guru_Har_Krishan_ji.pdf", image: "/books/images/Guru_Har_Krishan_ji.png" },
+    { title: "Dil Di Awaz", price: 'free', status: "popular", file: "/books/files/Dil_Di_Awaz.pdf", image: "/books/images/Dil_Di_Awaz.png" },
   ];
 
   // Distribute books to categories
-  const newReleases = library.filter((lib) => (lib.status === 'new')).slice(0, 5);
+  // "New Releases" takes the specific ones marked 'new', plus maybe the first few 'popular' if you want to fill it up
+  const newReleases = library.filter((lib) => (lib.status === 'new'));
+
+  // "Most Popular" takes everything else
   const popularBooks = library.filter((lib) => (lib.status === 'popular'));
 
   return (
@@ -26,6 +74,7 @@ const App = () => {
       <Header />
 
       <div className="w-full bg-orange-400 h-64 md:h-80 lg:h-100 text-white relative overflow-hidden">
+        {/* Make sure this hero image path is correct in your public folder */}
         <Image src={'/images/hero_img.png'} fill alt='Latest Updates' style={{ objectFit: 'cover' }} />
       </div>
 
@@ -62,10 +111,10 @@ const App = () => {
         </section>
 
         {/* --- DONATION BANNER --- */}
-        <section className="w-full">
+        <section id='donate' className="w-full">
           <div className="bg-[#6B6CCA] rounded-3xl p-8 md:p-12 text-center text-white shadow-lg mx-auto max-w-5xl relative overflow-hidden">
             {/* Subtle glow effect/gradient overlay */}
-            <div className="absolute inset-0 bg-linear-to-b from-transparent to-black/10 pointer-events-none"></div>
+            <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/10 pointer-events-none"></div>
 
             <div className="relative z-10 flex flex-col items-center">
               <h3 className="text-2xl md:text-3xl font-bold mb-4 tracking-wide">SUPPORT THE AUTHOR</h3>

@@ -12,7 +12,7 @@ const Header = () => {
 
                 {/* Left Links */}
                 <nav className="hidden md:flex justify-start space-x-8 w-1/3">
-                    <a href="/" className="text-gray-700 hover:text-orange-500 font-medium">About Us</a>
+                    <a href="/about-us" className="text-gray-700 hover:text-orange-500 font-medium">About Us</a>
                     <a href="/" className="text-gray-700 hover:text-orange-500 font-medium">Our Mission</a>
                 </nav>
 
