@@ -7,11 +7,56 @@ import BookCard from './components/BookCard';
 import StatCard from './components/StatCard';
 
 const App = () => {
-  // Mock data for the books pointing to local /files/ directory
-  // Note: I have generated image paths based on the filenames. 
-  // Please ensure corresponding .png or .jpg files exist in public/books/images/
   const library = [
-    // --- Manual/Existing Entries ---
+    {
+      title: "Put ta saray mawan de hi han",
+      price: 'free',
+      status: "new",
+      file: "/books/files/put_ta_saray_mawan_de_hi_han.pdf",
+      image: "/books/images/put_ta_saray_mawan_de_hi_han.png"
+    },
+    {
+      title: "Swachh Bharat",
+      price: 'free',
+      status: "new",
+      file: "/books/files/swachh_bharat_punjabi.pdf",
+      image: "/books/images/swachh_bharat_punjabi.png"
+    },
+    {
+      title: "Swachh Bharat (Hindi Version)",
+      price: 'free',
+      status: "new",
+      file: "/books/files/swachh_bharat_hindi.pdf",
+      image: "/books/images/swachh_bharat_hindi.png"
+    },
+    {
+      title: "Swachh Bharat (English Version)",
+      price: 'free',
+      status: "new",
+      file: "/books/files/swachh_bharat_english.pdf",
+      image: "/books/images/swachh_bharat_english.png"
+    },
+    {
+      title: "Dithe Sabhe Thaav",
+      price: 'free',
+      status: "new",
+      file: "/books/files/dithe_sabhe_thaav.pdf",
+      image: "/books/images/dithe_sabhe_thaav.png"
+    },
+    {
+      title: "Dithe Sabhe Thaav (Hindi Version)",
+      price: 'free',
+      status: "new",
+      file: "/books/files/dithe_sabhe_thaav_hindi.pdf",
+      image: "/books/images/dithe_sabhe_thaav.png"
+    },
+    {
+      title: "Dithe Sabhe Thaav (English Version)",
+      price: 'free',
+      status: "new",
+      file: "/books/files/dithe_sabhe_thaav_english.pdf",
+      image: "/books/images/dithe_sabhe_thaav.png"
+    },
     {
       title: "Sabh to vadda Satguru Nanak Megh Ji nu",
       price: 'free',
@@ -22,26 +67,26 @@ const App = () => {
     {
       title: "Tatti tavi utte baitha roop kartar da",
       price: 'free',
-      status: "new",
+      status: "popular",
       file: "/books/files/tatti_tavi_utte_baitha_roop_kartar_da.pdf",
       image: "/books/images/tatti_tavi_utte.png"
     },
     {
       title: "Vaisakhi",
       price: 'free',
-      status: "new",
+      status: "popular",
       file: "/books/files/visakhi_punjabi_duniya_magazine.pdf",
       image: "/books/images/vaisakhi.png"
     },
     {
       title: "Maa Baap",
       price: 'free',
-      status: "new",
+      status: "popular",
       file: "/books/files/maa_baap.pdf",
       image: "/books/images/maa_baap.png"
     },
 
-    // --- New Additions (From your list) ---
+    // --- Populars ---
     { title: "Eh Janam Tumare Lekhe", price: 'free', status: "popular", file: "/books/files/Eh_Janam_Tumare_Lekhe.pdf", image: "/books/images/Eh_Janam_Tumare_Lekhe.png" },
     { title: "Guru Nanak Gurdwara Amesterdam", price: 'free', status: "popular", file: "/books/files/guru_nanak_Gurdwara_Amesterdam.pdf", image: "/books/images/guru_nanak_Gurdwara_Amesterdam.png" },
     { title: "Guru Teg Bhadar Sahib", price: 'free', status: "popular", file: "/books/files/Guru_Teg_Bhadar_Sahib.pdf", image: "/books/images/Guru_Teg_Bhadar_Sahib.png" },
@@ -61,8 +106,6 @@ const App = () => {
     { title: "Dil Di Awaz", price: 'free', status: "popular", file: "/books/files/Dil_Di_Awaz.pdf", image: "/books/images/Dil_Di_Awaz.png" },
   ];
 
-  // Distribute books to categories
-  // "New Releases" takes the specific ones marked 'new', plus maybe the first few 'popular' if you want to fill it up
   const newReleases = library.filter((lib) => (lib.status === 'new'));
 
   // "Most Popular" takes everything else
@@ -73,7 +116,7 @@ const App = () => {
 
       <Header />
 
-      <div className="w-full bg-orange-400 h-64 md:h-80 lg:h-100 text-white relative overflow-hidden">
+      <div className="w-full bg-orange-400 h-64 md:h-80 lg:h-130 text-white relative overflow-hidden">
         {/* Make sure this hero image path is correct in your public folder */}
         <Image src={'/images/hero_img.png'} fill alt='Latest Updates' style={{ objectFit: 'cover' }} />
       </div>

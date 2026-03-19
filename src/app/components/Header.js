@@ -27,8 +27,8 @@ const Header = () => {
 
                 {/* Right Links */}
                 <nav className="hidden md:flex justify-end space-x-8 w-1/3">
-                    <a href="#new-releases" className="text-gray-700 hover:text-orange-500 font-medium">New Releases</a>
-                    <a href="#most-popular" className="text-gray-700 hover:text-orange-500 font-medium">Most Popular</a>
+                    <a href="/#new-releases" className="text-gray-700 hover:text-orange-500 font-medium">New Releases</a>
+                    <a href="/#most-popular" className="text-gray-700 hover:text-orange-500 font-medium">Most Popular</a>
                 </nav>
 
                 {/* Mobile Menu Button */}
